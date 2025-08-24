@@ -1,0 +1,75 @@
+{
+  "app": {
+    "name": "IdeaHub",
+    "description": "Plataforma colaborativa de gestión de ideas",
+    "tagline": "Transforma Ideas en Realidad"
+  },
+  "navigation": {
+    "home": "Inicio",
+    "workspaces": "Espacios de Trabajo",
+    "communities": "Comunidades",
+    "ideas": "Ideas",
+    "search": "Buscar",
+    "analytics": "Análisis"
+  },
+  "home": {
+    "hero": {
+      "title": "Transforma Ideas en",
+      "title_highlight": "Realidad",
+      "subtitle": "IdeaHub es la plataforma colaborativa donde los equipos se unen para compartir, desarrollar e implementar ideas innovadoras. Desde el concepto hasta la ejecución, hacemos que la gestión de ideas sea fluida y atractiva.",
+      "get_started": "Comenzar",
+      "explore_ideas": "Explorar Ideas"
+    },
+    "stats": {
+      "active_workspaces": "Espacios de Trabajo Activos",
+      "communities": "Comunidades",
+      "ideas_shared": "Ideas Compartidas",
+      "active_users": "Usuarios Activos"
+    },
+    "features": {
+      "title": "Todo lo que necesitas para gestionar ideas",
+      "subtitle": "Funciones poderosas diseñadas para optimizar tu flujo de trabajo de gestión de ideas",
+      "workspaces": {
+        "title": "Espacios de Trabajo Colaborativos",
+        "description": "Crea y gestiona espacios de trabajo para tu organización con funciones de colaboración en equipo."
+      },
+      "communities": {
+        "title": "Participación Comunitaria",
+        "description": "Construye comunidades alrededor de intereses compartidos y fomenta discusiones significativas."
+      },
+      "ideas": {
+        "title": "Gestión de Ideas",
+        "description": "Captura, organiza y rastrea ideas desde el concepto hasta la implementación."
+      },
+      "search": {
+        "title": "Búsqueda Avanzada",
+        "description": "Encuentra ideas, comunidades y contenido con capacidades de búsqueda potentes."
+      }
+    },
+    "cta": {
+      "title": "¿Listo para comenzar?",
+      "subtitle": "Únete a miles de equipos que ya usan IdeaHub para gestionar sus ideas",
+      "create_workspace": "Crear Espacio de Trabajo",
+      "join_community": "Unirse a Comunidad"
+    }
+  },
+  "workspaces": {
+    "title": "Espacios de Trabajo",
+    "subtitle": "Gestiona los espacios de trabajo de tu organización y colabora con equipos",
+    "create_workspace": "Crear Espacio de Trabajo",
+    "no_workspaces": "Sin espacios de trabajo",
+    "no_workspaces_description": "Comienza creando tu primer espacio de trabajo.",
+    "public": "Público",
+    "members": "miembros",
+    "created": "Creado",
+    "view": "Ver"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Ocurrió un error",
+    "not_found": "Página No Encontrada",
+    "not_found_description": "Lo sentimos, no pudimos encontrar la página que buscas. Podría haber sido movida, eliminada, o ingresaste la URL incorrecta.",
+    "go_home": "Ir al Inicio",
+    "go_back": "Volver"
+  }
+}

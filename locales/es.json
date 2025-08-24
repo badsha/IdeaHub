@@ -1,0 +1,156 @@
+{
+  "app": {
+    "name": "IdeaHub",
+    "description": "Plataforma colaborativa de gestión de ideas",
+    "tagline": "Transforma Ideas en Realidad"
+  },
+  "navigation": {
+    "home": "Inicio",
+    "workspaces": "Espacios de Trabajo",
+    "communities": "Comunidades",
+    "ideas": "Ideas",
+    "search": "Buscar"
+  },
+  "home": {
+    "hero": {
+      "title": "Transforma Ideas en",
+      "title_highlight": "Realidad",
+      "subtitle": "IdeaHub es la plataforma colaborativa donde los equipos se unen para compartir, desarrollar e implementar ideas innovadoras. Desde el concepto hasta la ejecución, hacemos que la gestión de ideas sea fluida y atractiva.",
+      "get_started": "Comenzar",
+      "explore_ideas": "Explorar Ideas"
+    },
+    "stats": {
+      "active_workspaces": "Espacios de Trabajo Activos",
+      "communities": "Comunidades",
+      "ideas_shared": "Ideas Compartidas",
+      "active_users": "Usuarios Activos"
+    },
+    "features": {
+      "title": "Todo lo que necesitas para gestionar ideas",
+      "subtitle": "Funciones poderosas diseñadas para optimizar tu flujo de trabajo de gestión de ideas",
+      "workspaces": {
+        "title": "Espacios de Trabajo Colaborativos",
+        "description": "Crea y gestiona espacios de trabajo para tu organización con funciones de colaboración en equipo."
+      },
+      "communities": {
+        "title": "Participación Comunitaria",
+        "description": "Construye comunidades alrededor de intereses compartidos y fomenta discusiones significativas."
+      },
+      "ideas": {
+        "title": "Gestión de Ideas",
+        "description": "Captura, organiza y rastrea ideas desde el concepto hasta la implementación."
+      },
+      "search": {
+        "title": "Búsqueda Avanzada",
+        "description": "Encuentra ideas, comunidades y contenido con capacidades de búsqueda potentes."
+      }
+    },
+    "cta": {
+      "title": "¿Listo para comenzar?",
+      "subtitle": "Únete a miles de equipos que ya usan IdeaHub para gestionar sus ideas",
+      "create_workspace": "Crear Espacio de Trabajo",
+      "join_community": "Unirse a Comunidad"
+    }
+  },
+  "workspaces": {
+    "title": "Espacios de Trabajo",
+    "subtitle": "Gestiona los espacios de trabajo de tu organización y colabora con equipos",
+    "create_workspace": "Crear Espacio de Trabajo",
+    "no_workspaces": "Sin espacios de trabajo",
+    "no_workspaces_description": "Comienza creando tu primer espacio de trabajo.",
+    "public": "Público",
+    "members": "miembros",
+    "created": "Creado",
+    "view": "Ver"
+  },
+  "communities": {
+    "title": "Comunidades",
+    "subtitle": "Construye y gestiona comunidades alrededor de intereses compartidos",
+    "create_community": "Crear Comunidad",
+    "no_communities": "Sin comunidades",
+    "no_communities_description": "Comienza creando tu primera comunidad."
+  },
+  "ideas": {
+    "title": "Ideas",
+    "subtitle": "Captura, organiza y rastrea ideas innovadoras",
+    "create_idea": "Crear Idea",
+    "no_ideas": "Sin ideas",
+    "no_ideas_description": "Comienza creando tu primera idea."
+  },
+  "search": {
+    "title": "Buscar",
+    "subtitle": "Encuentra ideas, comunidades y contenido",
+    "placeholder": "Buscar ideas, comunidades o contenido...",
+    "no_results": "No se encontraron resultados",
+    "no_results_description": "Intenta ajustar tus términos de búsqueda."
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Ocurrió un error",
+    "not_found": "Página No Encontrada",
+    "not_found_description": "Lo sentimos, no pudimos encontrar la página que buscas. Podría haber sido movida, eliminada, o ingresaste la URL incorrecta.",
+    "go_home": "Ir al Inicio",
+    "go_back": "Volver",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "view": "Ver",
+    "create": "Crear",
+    "update": "Actualizar",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "actions": "Acciones",
+    "status": "Estado",
+    "created_at": "Creado",
+    "updated_at": "Actualizado",
+    "name": "Nombre",
+    "description": "Descripción",
+    "email": "Correo Electrónico",
+    "password": "Contraseña",
+    "confirm_password": "Confirmar Contraseña",
+    "title": "Título",
+    "content": "Contenido",
+    "tags": "Etiquetas",
+    "visibility": "Visibilidad",
+    "public": "Público",
+    "private": "Privado",
+    "workspace": "Espacio de Trabajo",
+    "draft": "Borrador",
+    "active": "Activo",
+    "implemented": "Implementado",
+    "archived": "Archivado"
+  },
+  "errors": {
+    "access_denied": "Acceso denegado",
+    "not_found": "Recurso no encontrado",
+    "validation_error": "Error de validación",
+    "server_error": "Error del servidor",
+    "network_error": "Error de red",
+    "unauthorized": "No autorizado",
+    "forbidden": "Prohibido"
+  },
+  "success": {
+    "created": "Creado exitosamente",
+    "updated": "Actualizado exitosamente",
+    "deleted": "Eliminado exitosamente",
+    "saved": "Guardado exitosamente"
+  },
+  "analytics": {
+    "dashboard": "Panel de Análisis",
+    "workspace": "Espacio de Trabajo",
+    "lastUpdated": "Última Actualización",
+    "totalMembers": "Total de Miembros",
+    "totalCommunities": "Total de Comunidades",
+    "totalIdeas": "Total de Ideas",
+    "implementationRate": "Tasa de Implementación",
+    "recentActivity": "Actividad Reciente",
+    "activitySummary": "Resumen de Actividad",
+    "totalActivities": "Total de Actividades",
+    "uniqueParticipants": "Participantes Únicos",
+    "avgIdeasPerCommunity": "Promedio de Ideas por Comunidad",
+    "activityBreakdown": "Desglose de Actividad",
+    "refresh": "Actualizar Datos"
+  }
+}

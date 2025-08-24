@@ -1,0 +1,123 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: ideahub-postgres-dev
+    environment:
+      POSTGRES_DB: ideahub_dev
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_INITDB_ARGS: "--encoding=UTF-8 --lc-collate=C --lc-ctype=C"
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_dev_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d ideahub_dev"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - ideahub-dev-network
+
+  # FastAPI Application (Development)
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: ideahub-api-dev
+    environment:
+      - ENVIRONMENT=development
+      - DATABASE_URL=postgresql+psycopg2://postgres:password@postgres:5432/ideahub_dev
+      - DB_POOL_SIZE=5
+      - DB_MAX_OVERFLOW=10
+      - DB_POOL_TIMEOUT=30
+      - DB_POOL_RECYCLE=3600
+      - DB_ECHO=true
+      - LOG_LEVEL=DEBUG
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - ideahub-dev-network
+    volumes:
+      - .:/app
+      - /app/venv
+      - ./logs:/app/logs
+      - ./locales:/app/locales
+    command: >
+      sh -c "
+        echo 'Waiting for database...' &&
+        sleep 5 &&
+        echo 'Running database migrations...' &&
+        alembic upgrade head &&
+        echo 'Starting development server...' &&
+        uvicorn apps.gateway.main:app --host 0.0.0.0 --port 8000 --reload
+      "
+
+  # React UI Application (Development)
+  ui:
+    build:
+      context: ./ui
+      dockerfile: Dockerfile.dev
+    container_name: ideahub-ui-dev
+    environment:
+      - NODE_ENV=development
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+    restart: unless-stopped
+    networks:
+      - ideahub-dev-network
+    volumes:
+      - ./ui:/app
+      - /app/node_modules
+    command: ["npm", "run", "dev"]
+
+  # PgAdmin (for database management)
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: ideahub-pgadmin-dev
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@ideahub.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    ports:
+      - "8080:80"
+    volumes:
+      - pgadmin_dev_data:/var/lib/pgadmin
+    depends_on:
+      - postgres
+    restart: unless-stopped
+    networks:
+      - ideahub-dev-network
+
+  # Redis (for caching)
+  redis:
+    image: redis:7-alpine
+    container_name: ideahub-redis-dev
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_dev_data:/data
+    restart: unless-stopped
+    networks:
+      - ideahub-dev-network
+    command: redis-server --appendonly yes
+
+volumes:
+  postgres_dev_data:
+  pgadmin_dev_data:
+  redis_dev_data:
+
+networks:
+  ideahub-dev-network:
+    driver: bridge

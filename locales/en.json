@@ -1,0 +1,156 @@
+{
+  "app": {
+    "name": "IdeaHub",
+    "description": "Collaborative idea management platform",
+    "tagline": "Transform Ideas Into Reality"
+  },
+  "navigation": {
+    "home": "Home",
+    "workspaces": "Workspaces",
+    "communities": "Communities",
+    "ideas": "Ideas",
+    "search": "Search"
+  },
+  "home": {
+    "hero": {
+      "title": "Transform Ideas Into",
+      "title_highlight": "Reality",
+      "subtitle": "IdeaHub is the collaborative platform where teams come together to share, develop, and implement innovative ideas. From concept to execution, we make idea management seamless and engaging.",
+      "get_started": "Get Started",
+      "explore_ideas": "Explore Ideas"
+    },
+    "stats": {
+      "active_workspaces": "Active Workspaces",
+      "communities": "Communities",
+      "ideas_shared": "Ideas Shared",
+      "active_users": "Active Users"
+    },
+    "features": {
+      "title": "Everything you need to manage ideas",
+      "subtitle": "Powerful features designed to streamline your idea management workflow",
+      "workspaces": {
+        "title": "Collaborative Workspaces",
+        "description": "Create and manage workspaces for your organization with team collaboration features."
+      },
+      "communities": {
+        "title": "Community Engagement",
+        "description": "Build communities around shared interests and foster meaningful discussions."
+      },
+      "ideas": {
+        "title": "Idea Management",
+        "description": "Capture, organize, and track ideas from concept to implementation."
+      },
+      "search": {
+        "title": "Advanced Search",
+        "description": "Find ideas, communities, and content with powerful search capabilities."
+      }
+    },
+    "cta": {
+      "title": "Ready to get started?",
+      "subtitle": "Join thousands of teams already using IdeaHub to manage their ideas",
+      "create_workspace": "Create Workspace",
+      "join_community": "Join Community"
+    }
+  },
+  "workspaces": {
+    "title": "Workspaces",
+    "subtitle": "Manage your organization's workspaces and collaborate with teams",
+    "create_workspace": "Create Workspace",
+    "no_workspaces": "No workspaces",
+    "no_workspaces_description": "Get started by creating your first workspace.",
+    "public": "Public",
+    "members": "members",
+    "created": "Created",
+    "view": "View"
+  },
+  "communities": {
+    "title": "Communities",
+    "subtitle": "Build and manage communities around shared interests",
+    "create_community": "Create Community",
+    "no_communities": "No communities",
+    "no_communities_description": "Get started by creating your first community."
+  },
+  "ideas": {
+    "title": "Ideas",
+    "subtitle": "Capture, organize, and track innovative ideas",
+    "create_idea": "Create Idea",
+    "no_ideas": "No ideas",
+    "no_ideas_description": "Get started by creating your first idea."
+  },
+  "search": {
+    "title": "Search",
+    "subtitle": "Find ideas, communities, and content",
+    "placeholder": "Search for ideas, communities, or content...",
+    "no_results": "No results found",
+    "no_results_description": "Try adjusting your search terms."
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "not_found": "Page Not Found",
+    "not_found_description": "Sorry, we couldn't find the page you're looking for. It might have been moved, deleted, or you entered the wrong URL.",
+    "go_home": "Go Home",
+    "go_back": "Go Back",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "create": "Create",
+    "update": "Update",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "actions": "Actions",
+    "status": "Status",
+    "created_at": "Created",
+    "updated_at": "Updated",
+    "name": "Name",
+    "description": "Description",
+    "email": "Email",
+    "password": "Password",
+    "confirm_password": "Confirm Password",
+    "title": "Title",
+    "content": "Content",
+    "tags": "Tags",
+    "visibility": "Visibility",
+    "public": "Public",
+    "private": "Private",
+    "workspace": "Workspace",
+    "draft": "Draft",
+    "active": "Active",
+    "implemented": "Implemented",
+    "archived": "Archived"
+  },
+  "errors": {
+    "access_denied": "Access denied",
+    "not_found": "Resource not found",
+    "validation_error": "Validation error",
+    "server_error": "Server error",
+    "network_error": "Network error",
+    "unauthorized": "Unauthorized",
+    "forbidden": "Forbidden"
+  },
+  "success": {
+    "created": "Successfully created",
+    "updated": "Successfully updated",
+    "deleted": "Successfully deleted",
+    "saved": "Successfully saved"
+  },
+  "analytics": {
+    "dashboard": "Analytics Dashboard",
+    "workspace": "Workspace",
+    "lastUpdated": "Last Updated",
+    "totalMembers": "Total Members",
+    "totalCommunities": "Total Communities",
+    "totalIdeas": "Total Ideas",
+    "implementationRate": "Implementation Rate",
+    "recentActivity": "Recent Activity",
+    "activitySummary": "Activity Summary",
+    "totalActivities": "Total Activities",
+    "uniqueParticipants": "Unique Participants",
+    "avgIdeasPerCommunity": "Avg Ideas per Community",
+    "activityBreakdown": "Activity Breakdown",
+    "refresh": "Refresh Data"
+  }
+}
