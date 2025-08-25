@@ -14,8 +14,8 @@ class Idea(Base):
     description = Column(Text)
     visibility = Column(String(50), default="public")  # public, private, workspace
     status = Column(String(50), default="draft")  # draft, active, implemented, archived
-    tags = Column(JSON, default=list)
-    metadata = Column(JSON, default=dict)
+    tags = Column("tags", JSON, default=list)
+    extra_data = Column("metadata", JSON, default=dict)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
 

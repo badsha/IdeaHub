@@ -8,7 +8,6 @@ import {
   CalendarIcon,
   EyeIcon,
 } from '@heroicons/react/24/outline'
-import { apiService } from '@/services/api'
 import LoadingSpinner from '@/components/LoadingSpinner'
 
 // Mock data for demonstration

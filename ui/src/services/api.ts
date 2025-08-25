@@ -20,7 +20,8 @@ api.interceptors.request.use(
     }
     
     // Add debug auth header for testing
-    if (process.env.NODE_ENV === 'development') {
+    // Vite uses import.meta.env instead of process.env
+    if (import.meta.env.MODE === 'development') {
       config.headers['X-Debug-Auth'] = 'authenticated'
     }
     

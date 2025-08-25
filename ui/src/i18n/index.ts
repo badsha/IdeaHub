@@ -20,8 +20,8 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    fallbackLng: 'en',
-    debug: process.env.NODE_ENV === 'development',
+    fallbackLng: 'en', // Vite uses import.meta.env instead of process.env
+    debug: import.meta.env.MODE === 'development',
     
     interpolation: {
       escapeValue: false, // React already escapes values

@@ -1,5 +1,30 @@
 version: '3.8'
 
+# Use a YAML anchor to define a reusable base for the api and migrate services.
+# This avoids duplicating configuration and keeps the file DRY.
+x-api-base: &api-base
+  build:
+    context: .
+    dockerfile: Dockerfile
+    target: production
+  environment:
+    - ENVIRONMENT=production
+    - DATABASE_URL=postgresql+psycopg2://postgres:${POSTGRES_PASSWORD:-password}@postgres:5432/ideahub
+    - DB_POOL_SIZE=10
+    - DB_MAX_OVERFLOW=20
+    - DB_POOL_TIMEOUT=30
+    - DB_POOL_RECYCLE=3600
+    - DB_ECHO=false
+    - LOG_LEVEL=INFO
+  depends_on:
+    postgres:
+      condition: service_healthy
+  networks:
+    - ideahub-network
+  volumes:
+    - ./logs:/app/logs
+    - ./locales:/app/locales
+
 services:
   # PostgreSQL Database
   postgres:
@@ -26,46 +51,24 @@ services:
 
   # FastAPI Application
   api:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      target: production
+    <<: *api-base # This merges the base configuration from the anchor
     container_name: ideahub-api
-    environment:
-      - ENVIRONMENT=production
-      - DATABASE_URL=postgresql+psycopg2://postgres:${POSTGRES_PASSWORD:-password}@postgres:5432/ideahub
-      - DB_POOL_SIZE=10
-      - DB_MAX_OVERFLOW=20
-      - DB_POOL_TIMEOUT=30
-      - DB_POOL_RECYCLE=3600
-      - DB_ECHO=false
-      - LOG_LEVEL=INFO
     ports:
       - "8000:8000"
-    depends_on:
-      postgres:
-        condition: service_healthy
     restart: unless-stopped
-    networks:
-      - ideahub-network
-    volumes:
-      - ./logs:/app/logs
-      - ./locales:/app/locales
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
       interval: 30s
       timeout: 10s
       retries: 3
       start_period: 40s
-    command: >
-      sh -c "
-        echo 'Waiting for database...' &&
-        sleep 10 &&
-        echo 'Running database migrations...' &&
-        alembic upgrade head &&
-        echo 'Starting application...' &&
-        uvicorn apps.gateway.main:app --host 0.0.0.0 --port 8000 --workers 4
-      "
+    # The command is now simplified to only start the application server.
+    command: ["uvicorn", "apps.gateway.main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "4"]
+
+  # A dedicated, one-off service for running database migrations.
+  migrate:
+    <<: *api-base # Reuses the same build and environment as the api service
+    command: ["alembic", "upgrade", "head"]
 
   # React UI Application
   ui:

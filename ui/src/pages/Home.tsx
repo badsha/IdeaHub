@@ -7,9 +7,7 @@ import {
   BuildingOfficeIcon,
   MagnifyingGlassIcon,
   ArrowRightIcon,
-  ChartBarIcon,
-  ShieldCheckIcon,
-  SparklesIcon,
+  ChartBarIcon
 } from '@heroicons/react/24/outline'
 
 const features = [

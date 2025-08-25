@@ -31,7 +31,7 @@ class IdeaStatistics(Base):
     conversion_rate = Column(Float, default=0.0)  # implemented / total
     
     # Metadata
-    metadata = Column(JSON, default=dict)
+    extra_data = Column("metadata", JSON, default=dict)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
 
@@ -61,7 +61,7 @@ class CommunityStatistics(Base):
     avg_comments_per_idea = Column(Float, default=0.0)
     
     # Metadata
-    metadata = Column(JSON, default=dict)
+    extra_data = Column("metadata", JSON, default=dict)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
 
@@ -91,7 +91,7 @@ class WorkspaceStatistics(Base):
     implementation_rate = Column(Float, default=0.0)
     
     # Metadata
-    metadata = Column(JSON, default=dict)
+    extra_data = Column("metadata", JSON, default=dict)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
 

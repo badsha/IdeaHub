@@ -4,12 +4,11 @@ import { motion } from 'framer-motion';
 import { 
   ChartBarIcon, 
   UsersIcon, 
-  LightBulbIcon, 
-  TrendingUpIcon,
-  CalendarIcon,
+  LightBulbIcon,
+  ArrowTrendingUpIcon,
   ClockIcon
 } from '@heroicons/react/24/outline';
-import { api } from '../services/api';
+import api from '../services/api';
 
 interface AnalyticsData {
   workspace: {
@@ -103,7 +102,7 @@ const Analytics: React.FC = () => {
         case 'idea_created':
           return <LightBulbIcon className="w-5 h-5 text-blue-500" />;
         case 'idea_voted':
-          return <TrendingUpIcon className="w-5 h-5 text-green-500" />;
+          return <ArrowTrendingUpIcon className="w-5 h-5 text-green-500" />;
         case 'member_joined':
           return <UsersIcon className="w-5 h-5 text-purple-500" />;
         default:
@@ -201,7 +200,7 @@ const Analytics: React.FC = () => {
           <StatCard
             title={t('analytics.implementationRate')}
             value={`${data.statistics.workspace.implementation_rate.toFixed(1)}%`}
-            icon={<TrendingUpIcon className="w-8 h-8" />}
+            icon={<ArrowTrendingUpIcon className="w-8 h-8" />}
             color="border-purple-500"
           />
         </div>

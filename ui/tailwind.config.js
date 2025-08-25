@@ -7,6 +7,20 @@ export default {
   theme: {
     extend: {
       colors: {
+        // This block adds a full set of conventional colors used by the component
+        // styles in index.css. This resolves the build errors for missing classes
+        // like 'ring-offset-background', 'border-input', 'bg-card', etc.
+        border: 'hsl(214.3 31.8% 91.4%)',
+        input: 'hsl(214.3 31.8% 91.4%)',
+        ring: '#2563eb', // This is the hex value for primary-600
+        background: 'hsl(0 0% 100%)',
+        foreground: 'hsl(222.2 84% 4.9%)',
+        card: 'hsl(0 0% 100%)',
+        'card-foreground': 'hsl(222.2 84% 4.9%)',
+        accent: 'hsl(210 40% 96.1%)',
+        'accent-foreground': 'hsl(222.2 47.4% 11.2%)',
+        muted: 'hsl(210 40% 96.1%)',
+        'muted-foreground': 'hsl(215.4 16.3% 46.9%)',
         primary: {
           50: '#eff6ff',
           100: '#dbeafe',
